@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.volkruss.demo.repository.StoreRepository">
+    <!-- idには対応するメソッド名を記述します -->
+    <select id="findAll" resultType="com.volkruss.demo.entity.Store"><!-- 正しく指定しないと起動時エラーになります -->
+		select * from stores
+	</select>
+	<!-- 処理がselectなのでselectタグで囲います -->
+	<select id="findById" resultType="com.volkruss.demo.entity.Store">
+		select name,district from stores where id = #{id}
+	</select>
+</mapper>
